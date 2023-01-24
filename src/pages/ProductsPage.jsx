@@ -1,9 +1,15 @@
+import { Box, Grid } from '@mui/material'
 import React from 'react'
+import ProductList from '../components/Products/ProductList'
 
-const Products = () => {
+const ProductsPage = () => {
   return (
-    <div>Products</div>
+    <Box  sx={{marginTop: '5rem'}}>
+      <Grid  spacing={3}>
+      <ProductList />
+      </Grid>
+    </Box >
   )
 }
 
-export default Products
+export default ProductsPage
