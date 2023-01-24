@@ -1,17 +1,19 @@
 import { Box, Button, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
-import { useProducts } from '../../contexts/ProductContextProvider';
+import {  useProduct } from '../../contexts/ProductContextProvider';
 
 const AddProduct = () => {
   const [product, setProduct] = useState({
+    picture: '',
     name: '',
     descr: '',
+    Author:'',
     price: 0,
-    picture: '',
     type: '',
+    Age:''
   });
 
-  // const { addProduct } = useProducts();
+  const { addProduct } = useProduct();
 
   const handleInp = (e) => {
     if (e.target.name === 'price') {
@@ -62,7 +64,7 @@ const AddProduct = () => {
       <TextField
         onChange={handleInp}
         fullWidth
-        name='descr'
+        name='Author'
         id='outlined-basic'
         label='Author'
         variant='outlined'
@@ -83,8 +85,17 @@ const AddProduct = () => {
         label='type'
         variant='outlined'
       />
+      
+      <TextField
+        onChange={handleInp}
+        fullWidth
+        name='Age'
+        id='outlined-basic'
+        label='Age category'
+        variant='outlined'
+      />
       <Button
-        // onClick={() => addProduct(product)}
+        onClick={() => addProduct(product)}
         variant='outlined'
         fullWidth
         size='large'
