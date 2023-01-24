@@ -1,6 +1,7 @@
 import { AccessTimeTwoTone } from '@mui/icons-material'
+import axios from 'axios'
 import React, { createContext, useContext, useReducer } from 'react'
-import { ACTIONS } from '../helper/consts'
+import { ACTIONS, API } from '../helper/consts'
 
 export const productContext = createContext()
 
@@ -25,14 +26,49 @@ const reducer = (state = INIT_STATE, action) => {
 }
 
 const ProductContextProvider = ({ children }) => {
-const [state, dispatch] = useReducer(reducer, INIT_STATE)
+  const [state, dispatch] = useReducer(reducer, INIT_STATE)
 
-//? GET запрос
-async function getProducts() {
-  const {data} = await axios
-}
+  //? GET запрос
+  async function getProducts() {
+    const { data } = await axios.get(API)
+
+    dispatch({
+      type: ACTIONS.GET_PRODUCTS,
+      payload: data,
+    });
+  }
+
+  //? POST запрос
+
+  async function addProduct(newProduct) {
+    await axios.post(API.newProduct)
+  }
+
+  //? DELETE запрос
+
+  async function deleteProduct(id) {
+    await axios.delete(`${API}/${id}`);
+    getProducts()
+  }
+  //? get one product details
+
+  async function getOneProduct(id) {
+    const { data } = await axios.get(`${API}/${id}`)
+    dispatch({ type: ACTIONS.GET_PRODUCTS_DETAILS, payload: data })
+  }
+
+  //? UPDATE product
+  async function updateProduct(newProduct) {
+    await axios.patch(`${API}/${newProduct.id}`, newProduct)
+  }
   const values = {
-
+    addProduct,
+    getProducts,
+    products: state.products,
+    deleteProduct,
+    getOneProduct,
+    updateProduct,
+    productsDetails: state.productsDetails
   }
   return (
     <productContext.Provider value={values}>
