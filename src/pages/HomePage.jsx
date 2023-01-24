@@ -1,8 +1,9 @@
 import React from 'react'
+import HomeContent from '../Content/HomeContent'
 
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <div><HomeContent/></div>
   )
 }
 
