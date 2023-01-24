@@ -10,9 +10,9 @@ import Logo from '../img/bookLogo.png'
 
 const pages = [
   { name: 'HOME', link: '/', id: 1 },
-  { name: 'PRODUCTS', link: '/products', id: 3 },
-  { name: 'ABOUT US', link: '/about', id: 4 },
-  { name: 'ADMIN', link: '/admin', id: 2 },
+  { name: 'PRODUCTS', link: '/products', id: 2 },
+  { name: 'ABOUT US', link: '/about', id: 3 },
+  { name: 'ADMIN', link: '/admin', id: 4 },
 
 ];
 

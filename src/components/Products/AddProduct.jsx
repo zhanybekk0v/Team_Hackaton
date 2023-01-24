@@ -1,17 +1,20 @@
 import { Box, Button, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
-import { useProducts } from '../../contexts/ProductContextProvider';
+import { useProduct } from '../../contexts/ProductContextProvider';
 
 const AddProduct = () => {
+
   const [product, setProduct] = useState({
-    name: '',
-    descr: '',
-    price: 0,
     picture: '',
+    name: '',
+    descr: 0,
+    author: '',
+    price: '',
     type: '',
+
   });
 
-  // const { addProduct } = useProducts();
+  const { addProduct } = useProduct();
 
   const handleInp = (e) => {
     if (e.target.name === 'price') {
@@ -84,7 +87,7 @@ const AddProduct = () => {
         variant='outlined'
       />
       <Button
-        // onClick={() => addProduct(product)}
+        onClick={() => addProduct(product)}
         variant='outlined'
         fullWidth
         size='large'

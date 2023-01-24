@@ -6,10 +6,10 @@ import Navbar from './Navbar/Navbar'
 
 const App = () => {
   return (
-    <div>
+    <>
       <Navbar />
       <MainRoutes />
-    </div>
+    </>
   )
 }
 

@@ -1,3 +1,40 @@
 {
-  "products": []
+  "books": [
+    {
+      "picture": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBYWFRYSFRUZGBgaGRoZGBkYHBofGhoYGhwkGhocGRwcIS4lHh4rHxoaJjgmKy8xNTU1HCU7QDszPy41NTEBDAwMEA8QHxISHjQrJCsxNjY0MTQ0NDY0NDQ3NDY0NDQ0NDQ0NTQ0NDQ+NDQ0NDQ0ND00NDQ0NDQ0NDQ0NTQ0NP/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABQYDBAcCAQj/xABCEAACAQIEAwUFBQcBCAMBAAABAgADEQQSITEFQVEGEyJhcQcygZGxFEJScqEjYrLBwtHw4RUlNUNTc4LxNJKTFv/EABkBAQADAQEAAAAAAAAAAAAAAAABAgMEBf/EACYRAAICAgICAQUAAwAAAAAAAAABAhEDIRIxBEEyEyJRYYEFI5H/2gAMAwEAAhEDEQA/AOsREQBERAEREAREQBERAEREAREQBERAERPD1lG7KPUiAe4mq/EaQ3qL87/SYhxiiSFD3JNhYHnp0kWiyjJ+jfiIklRERAEREAREQBERAEREAREQBERAE+FhPGIOnz+hmsQDMpzcXSRaMbNo1lH3hMbYtBzmjVpkTXcTJ5pfg0UIkg/E0HImYH4yOSH5yGxxbKQrhHPuk2Ivfax3vt8ZB1S9jnxVNSb2KsugKuQbW1IGVhfTwHzkrJJ+yeEUXBuMNyQfG88HirnoPhKQxQl74liWJbwCpZc6vltlPIWIv+CZMYKBaz1KhLorAKPu5MlxcaXFza+ttb6Sycn7HGP4LZV4sw3qAfFRMT4xyL52PodJWKNTDXICuQ4BN8pB74XsQuo1pBT+HyF5KYLF51JyOoAHv+8bk7+en6y9Mi0ZK1UndifjMDPN7BcMesbjwp+I/wBI5yUXs0ltXcnqMo/S0o5xjpslNlYd56wjeNT+8PrJDifAXpguhzoNTpZgOtuY9JGYRvGvqPrJi1LaNFLRd",
+      "name": "До встречи ч тобой",
+      "descr": "jJoJO",
+      "author": "",
+      "price": 150,
+      "type": "books",
+      "id": 1
+    },
+    {
+      "picture": "",
+      "name": "",
+      "descr": 0,
+      "author": "",
+      "price": "",
+      "type": "",
+      "id": 2
+    },
+    {
+      "picture": "",
+      "name": "",
+      "descr": 0,
+      "author": "",
+      "price": "",
+      "type": "",
+      "id": 3
+    },
+    {
+      "picture": "",
+      "name": "",
+      "descr": 0,
+      "author": "",
+      "price": "",
+      "type": "",
+      "id": 4
+    }
+  ]
 }
