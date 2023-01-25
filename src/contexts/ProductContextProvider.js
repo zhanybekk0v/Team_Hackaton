@@ -41,7 +41,7 @@ const ProductContextProvider = ({ children }) => {
   //? POST запрос
 
   async function addProduct(newProduct) {
-    await axios.post(API , newProduct)
+    await axios.post(API, newProduct)
   }
 
   //? DELETE запрос

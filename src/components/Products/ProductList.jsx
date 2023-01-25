@@ -1,7 +1,7 @@
 import { Grid, Pagination } from '@mui/material'
 import { Box } from '@mui/system'
 import React, { useEffect, useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { useProduct } from '../../contexts/ProductContextProvider'
 import ProductCard from './ProductCard'
 
