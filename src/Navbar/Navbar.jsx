@@ -4,12 +4,10 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { alpha, Avatar, Grid, MenuItem } from '@mui/material';
+import { Avatar, MenuItem } from '@mui/material';
 import { Link } from 'react-router-dom';
 import Logo from '../img/bookLogo.png'
-import SearchIcon from '@mui/icons-material/Search';
-import styled from '@emotion/styled';
-import InputBase from '@mui/material/InputBase';
+
 
 const pages = [
   { name: 'HOME', link: '/', id: 1 },
@@ -35,8 +33,6 @@ export default function Navbar() {
             ))}
           </Box>
           <Button color="inherit">Login</Button>
-          <Button color="inherit">Login</Button>
-
         </Toolbar>
       </AppBar>
     </Box>
