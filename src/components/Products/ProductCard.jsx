@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useProduct } from '../../contexts/ProductContextProvider';
-import { useNavigate } from 'react-router-dom';
+import { Link,  useNavigate } from 'react-router-dom';
 import './ProductCard.css'
 
 export default function ProductCard({ item }) {
@@ -9,11 +9,11 @@ export default function ProductCard({ item }) {
 
   return (
     <div className="book">
-      {/* <NavLink to={`/${.id}`} > */}
-      <div className="book_img">
-        <img className="books_img" src={item.picture} />
+      <Link to={`/details/${item.id}`} >
+      <div className="book_img" link>
+          <img className="books_img" src={item.picture} />
       </div>
-      {/* </NavLink> */}
+      </Link>
 
       <div className="books_all_info">
         <div className="info_block_title">
@@ -25,7 +25,7 @@ export default function ProductCard({ item }) {
         </div>
       </div>
         <div className="button">
-          <button onClick={() => deleteProduct(item.id)}  className="delete">
+          <button onClick={() => deleteProduct(item.id)} className="delete">
            Delete
           </button>
           <button onClick={() => navigate(`/edit/${item.id}`) } className="edit">
