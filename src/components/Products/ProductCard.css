@@ -1,0 +1,79 @@
+.book {
+  border: 1px solid rgb(236, 234, 230);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  padding-bottom: 30px;
+
+}
+
+.books {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+}
+
+.books_img {
+  width: 300px;
+  height: 400px;
+}
+
+.books_all_info {
+  display: flex;
+  justify-content: space-around;
+}
+
+.books_title {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  margin-top: 30px;
+
+}
+.books_author{
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.books_price {
+  color: red;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.button {
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.delete {
+  cursor: pointer;
+  padding: 8px 30px;
+  background-color: rgb(255, 0, 0);
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: white;
+  border: 2px solid grey;
+}
+.edit{
+  cursor: pointer;
+  padding: 8px 30px;
+  background-color: rgb(6, 246, 234);
+  border-radius: 8px;
+  border: 2px solid grey;
+  font-size: 16px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: rgb(9, 9, 9);
+}
+.delete:hover {
+  transform: translateY(-10% );
+  transition: 0.6s all;
+}
+.edit:hover {
+  transform: translateY(-10% );
+  transition: 0.6s all;
+}
