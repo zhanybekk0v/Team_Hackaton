@@ -40,14 +40,13 @@ const ProductList = () => {
           display: 'flex',
           justifyContent: 'space-around',
           flexWrap: 'wrap',
-          mb: '4rem',
         }}>
           {currentData().map((item) => (
             <ProductCard key={item.id} item={item} />
           ))}
         </Box>
         {products.length > 0 ? (
-        <Pagination sx={{display:'flex' , justifyContent: 'center'}} onChange={handleChange} count={count} page={page} variant='outlined' snape='rounded' />
+        <Pagination sx={{display:'flex' , justifyContent: 'center', color:'dark'}} onChange={handleChange} count={count} page={page} variant='outlined' snape='rounded' />
         ) : (null)}
       </Grid>
     </>
