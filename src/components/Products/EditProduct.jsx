@@ -47,39 +47,43 @@ const EditProduct = () => {
 
   return (
     <>
-      <Box sx={{ width: '60vw', margin: '10vh auto' }}>
-        <Typography align='center' variant='h4' element='h2'>
+    <Box sx={{ width: '60vw', padding: '60px', textAlign: 'center'}}>
+        <Typography sx={{marginBottom: 3}} align='center' variant='h4' element='h2'>
           EDIT PAGE
         </Typography>
         <TextField
+         sx={{marginBottom: 2, backgroundColor: '#f6e4de'}}
           value={product.picture || ''}
           onChange={handleInp}
           fullWidth
           name='picture'
           id='outlined-basic'
-          label='picture'
+          label='Picture'
           variant='outlined'
         />
         <TextField
+        sx={{marginBottom: 2, backgroundColor: '#f6e4de'}}
           value={product.name || ''}
           onChange={handleInp}
           fullWidth
           name='name'
           id='outlined-basic'
-          label='name'
+          label='Name'
           variant='outlined'
         />
         <TextField
+        sx={{marginBottom: 2, backgroundColor: '#f6e4de'}}
           value={product.descr || ''}
           onChange={handleInp}
           fullWidth
           name='descr'
           id='outlined-basic'
-          label='description'
+          label='Description'
           variant='outlined'
         />
         <TextField
-          value={product.author || ''}
+        sx={{marginBottom: 2, backgroundColor: '#f6e4de'}}
+        value={product.author || ''}
           onChange={handleInp}
           fullWidth
           name='author'
@@ -88,7 +92,8 @@ const EditProduct = () => {
           variant='outlined'
         />
         <TextField
-          value={product.price || ''}
+        sx={{marginBottom: 2, backgroundColor: '#f6e4de'}}
+        value={product.price || ''}
           onChange={handleInp}
           fullWidth
           name='price'
@@ -97,7 +102,8 @@ const EditProduct = () => {
           variant='outlined'
         />
         <TextField
-          value={product.type || ''}
+        sx={{marginBottom: 2, backgroundColor: '#f6e4de'}}
+        value={product.type || ''}
           onChange={handleInp}
           fullWidth
           name='type'
@@ -106,7 +112,8 @@ const EditProduct = () => {
           variant='outlined'
         />
         <Button
-          onClick={() =>{ updateProduct(product); navigate('/products')}}
+        sx={{ width: 200 , color: 'brown', border: '2px solid brown',backgroundColor: '#f6e4de'}}
+        onClick={() =>{ updateProduct(product); navigate('/products')}}
           variant='outlined'
           fullWidth
           size='large'

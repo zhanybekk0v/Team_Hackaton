@@ -7,6 +7,7 @@ import CartPage from '../pages/CartPage'
 import EditProductPage from '../pages/EditProductPage'
 import HomePage from '../pages/HomePage'
 import NotFoundPage from '../pages/NotFoundPage'
+import ProductDetailsPage from '../pages/ProductDetailsPage'
 import ProductsPage from '../pages/ProductsPage'
 
 const MainRoutes = () => {
@@ -50,6 +51,11 @@ const MainRoutes = () => {
       link: '/about',
       element: <AboutUsPage />,
       id: 8
+    },
+    {
+      link: '/details/:id',
+      element: <ProductDetailsPage />,
+      id: 9
     }
   ]
   return (
