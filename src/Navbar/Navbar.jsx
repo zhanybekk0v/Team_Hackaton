@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import { Avatar, MenuItem } from '@mui/material';
 import { Link } from 'react-router-dom';
 import Logo from '../img/bookLogo.png'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 
 const pages = [
@@ -32,7 +33,10 @@ export default function Navbar() {
               </MenuItem>
             ))}
           </Box>
-          <Button color="inherit">Login</Button>
+          <Box sx={{display:'flex', alignItems:'center'}}>
+            <ShoppingCartIcon/>
+            <Button color="inherit">Login</Button>
+          </Box>
         </Toolbar>
       </AppBar>
     </Box>
