@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useProduct } from '../../contexts/ProductContextProvider';
-import { Link,  useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './ProductCard.css'
 
 export default function ProductCard({ item }) {
@@ -25,7 +25,7 @@ export default function ProductCard({ item }) {
         </div>
       </div>
         <div className="button">
-          <button onClick={() => deleteProduct(item.id)} className="delete">
+          <button onClick={() => deleteProduct(item.id)}  className="delete">
            Delete
           </button>
           <button onClick={() => navigate(`/edit/${item.id}`) } className="edit">

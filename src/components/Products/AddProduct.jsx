@@ -35,6 +35,8 @@ const AddProduct = () => {
 
 
   return (
+    <div className='add_product'>
+
     <Box sx={{ width: '60vw', padding: '60px', textAlign: 'center'}}>
       <Typography sx={{marginBottom: 3}} align='center' variant='h4' element='h2'>
         ADMIN PAGE
@@ -74,7 +76,7 @@ const AddProduct = () => {
         id='outlined-basic'
         label='Author'
         variant='outlined'
-      />
+        />
       <TextField
         sx={{marginBottom: 2, backgroundColor: '#f6e4de'}}
         onChange={handleInp}
@@ -92,16 +94,17 @@ const AddProduct = () => {
         id='outlined-basic'
         label='Type'
         variant='outlined'
-      />
+        />
       <Button
         sx={{ width: 200 , color: 'brown', border: '2px solid brown',backgroundColor: '#f6e4de'}}
         onClick={() => addProduct(product)}
         variant='outlined'
         size='large'
-      >
+        >
         CREATE PRODUCT
       </Button>
     </Box>
+        </div>
   );
 };
 
