@@ -1,6 +1,7 @@
 import { AccessTimeTwoTone } from '@mui/icons-material'
 import axios from 'axios'
 import React, { createContext, useContext, useReducer } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { ACTIONS, API } from '../helper/consts'
 
 export const productContext = createContext()
@@ -28,9 +29,13 @@ const reducer = (state = INIT_STATE, action) => {
 const ProductContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE)
 
+const location = useLocation()
+const navigate = useNavigate()
+   
+
   //? GET запрос
   async function getProducts() {
-    const { data } = await axios.get(API)
+    const { data } = await axios.get(`${API}${window.location.search}`)
 
     dispatch({
       type: ACTIONS.GET_PRODUCTS,
@@ -61,6 +66,23 @@ const ProductContextProvider = ({ children }) => {
   async function updateProduct(newProduct) {
     await axios.patch(`${API}/${newProduct.id}`, newProduct)
   }
+
+
+  const fetchByParams = async (query, value) => {
+    const search = new URLSearchParams(location.search);
+    if (value === 'all') {
+      search.delete(query);
+    } else {
+      search.set(query, value);
+    }
+
+    const url = `${location.pathname}?${search.toString()}`;
+
+    navigate(url);
+  };
+
+
+
   const values = {
     addProduct,
     getProducts,
@@ -68,7 +90,8 @@ const ProductContextProvider = ({ children }) => {
     deleteProduct,
     getOneProduct,
     updateProduct,
-    productsDetails: state.productsDetails
+    productsDetails: state.productsDetails,
+    fetchByParams
   }
   return (
     <productContext.Provider value={values}>
