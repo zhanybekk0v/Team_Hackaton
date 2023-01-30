@@ -8,6 +8,7 @@ import { Avatar, MenuItem } from '@mui/material';
 import { Link } from 'react-router-dom';
 import Logo from '../img/bookLogo.png'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import SideBar from '../components/Products/SideBar';
 
 
 const pages = [
