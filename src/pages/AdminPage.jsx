@@ -1,9 +1,15 @@
+import { Grid } from '@mui/material'
+import { Box } from '@mui/system'
 import React from 'react'
 import AddProduct from '../components/Products/AddProduct'
 
 const AdminPage = () => {
   return (
-    <div><AddProduct/></div>
+    <Box  sx={{padding: '3rem'}}>
+    <Grid  spacing={3}>
+    <AddProduct/>
+    </Grid>
+  </Box >
   )
 }
 

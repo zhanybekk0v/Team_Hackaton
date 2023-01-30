@@ -4,7 +4,7 @@ import ProductList from '../components/Products/ProductList'
 
 const ProductsPage = () => {
   return (
-    <Box  sx={{marginTop: '1rem'}}>
+    <Box  sx={{padding: '6rem'}}>
       <Grid  spacing={3}>
       <ProductList />
       </Grid>
