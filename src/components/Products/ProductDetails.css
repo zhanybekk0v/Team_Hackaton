@@ -1,58 +1,89 @@
-.content{
-    display: flex;
-    justify-content: space-around;
-}
-.book_details{
-    max-width: 28%;
-    margin: 0 auto;
-    background-color: bisque;
-    padding: 10px 20px;
-    border-radius: 10px;
-    line-height: 1.5;
-}
-.books_info{
-    width: 50%;
-    height: 600px;
-    margin: 0 auto;
-    background-color: bisque;
-    padding: 10px 20px;
-    border-radius: 10px;
-    line-height: 1.3;
-}
-.books_title{
-    font-size: 30px;
-    font-weight: 700;
-}
-.books_author{
-    font-weight: 700;
-    font-size: 30px;
-    margin-top: 30px;
-}
-.books_buy{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-.books_cart{
-    margin-left: 20px;
-    width: 50px;
-    height: 50px;
-}
-.books_btn{
- margin-bottom: 20px;
-    padding:15px 20px;
-    background-color: rgb(255, 196, 0);
-    border-radius: 50px;
-    border: 1px solid black;
-    font-size: 20px;
-}
-.books_btn:hover {
-    transform: translateY(-15%);
-    transition: 0.5s all;
-    border: 1px solid white;
-}
-.booksBtn{
-    display: flex;
-    justify-content: flex-end;
+.content {
+  display: flex;
+  justify-content: space-around;
 
+}
+
+.book_details {
+  max-width: 28%;
+  margin: 0 auto;
+  background-color: bisque;
+  padding: 10px 20px;
+  border-radius: 10px;
+  line-height: 1.5;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.books_descr {
+  line-height: 1.5;
+  font-size: 18px;
+}
+
+.books_info {
+  width: 50%;
+  height: 550px;
+  margin: 0 auto;
+  background-color: bisque;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  line-height: 1.3;
+}
+
+.books_title {
+  font-size: 30px;
+  font-weight: 700;
+}
+.books__author{
+  font-weight: bold;
+  margin-top: 30px;
+}
+.books__author span {
+  font-weight: 400;
+  font-size: 24px;
+  border-bottom: 1px solid black;
+}
+.books__genre{
+  font-weight: bold;
+  font-size: 20px;
+}
+.books__genre  span{
+  font-weight: 400;
+  font-size: 19px;
+  border-bottom: 1px solid black;
+}
+
+
+.books_buy {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.books_cart {
+  margin-left: 20px;
+  width: 50px;
+  height: 50px;
+}
+
+.books_btn {
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  background-color: rgb(255, 196, 0);
+  border-radius: 50px;
+  border: 1px solid black;
+  font-size: 20px;
+}
+
+.books_btn:hover {
+  transform: translateY(-15%);
+  transition: 0.5s all;
+  border: 1px solid white;
+}
+
+.booksBtn {
+  display: flex;
+  justify-content: flex-end;
 }

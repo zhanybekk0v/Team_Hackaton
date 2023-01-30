@@ -2,9 +2,13 @@ import * as React from 'react';
 import { useProduct } from '../../contexts/ProductContextProvider';
 import { Link, useNavigate } from 'react-router-dom';
 import './ProductCard.css'
+import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
+import { useCart } from '../../contexts/CartContextProvider';
+import { IconButton } from '@mui/material';
 
 export default function ProductCard({ item }) {
   const { deleteProduct } = useProduct()
+  const {addBookToCart,checkProductInCart} = useCart()
   const navigate = useNavigate()
 
   return (
@@ -31,6 +35,7 @@ export default function ProductCard({ item }) {
           <button onClick={() => navigate(`/edit/${item.id}`) } className="edit">
            Edit
           </button>
+          <IconButton onClick={() => addBookToCart(item)}> <LocalGroceryStoreIcon  size="large" color={checkProductInCart(item.id) ? 'primary' : 'black'} /></IconButton>
         </div>
     </div>
   );

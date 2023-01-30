@@ -4,7 +4,7 @@ import ProductDetailsList from '../components/Products/ProductDetailsList'
 
 const ProductDetailsPage = () => {
   return (
-    <Box  sx={{margin: '5rem'}}>
+    <Box  sx={{padding: '5rem'}}>
         <Grid >
         <ProductDetailsList />
       </Grid>
