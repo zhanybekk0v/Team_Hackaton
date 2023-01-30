@@ -22,21 +22,21 @@ const pages = [
 export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }} >
-      <AppBar position="fixed" color='default' >
+      <AppBar position="fixed" color='warning' >
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }} >
           <Avatar alt="Remy Sharp" src={Logo} sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 , boxShadow: '0px 5px 10px 0px rgba(0, 0, 0, 0.5)'}} />
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
             {pages.map((page) => (
               <MenuItem  key={page.id} >
-                <Link to={page.link}>
-                  <Typography  color="black" textAlign="end">{page.name}</Typography>
+                <Link  to={page.link}>
+                  <Typography sx={{boxShadow:'0px 5px 10px 0px rgba(0, 0, 0, 0.5)', borderRadius: '16px', padding: '5px 15px'}} color="white" textAlign="end">{page.name}</Typography>
                 </Link>
               </MenuItem>
             ))}
           </Box>
           <Box sx={{display:'flex', alignItems:'center'}}>
             <Link to='/cart'>
-            <ShoppingCartIcon/>
+            <ShoppingCartIcon sx={{color:'white'}}/>
             </Link>
             <Button color="inherit">Login</Button>
           </Box>

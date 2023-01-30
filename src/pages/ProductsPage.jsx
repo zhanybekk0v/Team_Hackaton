@@ -8,6 +8,7 @@ const ProductsPage = () => {
     <Box  sx={{padding: '6rem'}}>
       <Grid  spacing={3} >
       <SideBar/>
+
       <ProductList />
       </Grid>
     </Box >
