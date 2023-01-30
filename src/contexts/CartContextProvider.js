@@ -89,12 +89,31 @@ const CartContextProvider = ({ children }) => {
     })
   }
 
+  function changeProductCount (count , id) {
+    let cart = JSON.parse(localStorage.getItem('cart'))
+
+    cart.products = cart.products.map((product) => {
+      if (product.item.id == id){
+        product.count  = count;
+        product.subPrice = calcSubPrice(product)
+      }
+      return product
+    })
+    cart.totalPrice = calcTotalPrice(cart.products)
+    localStorage.setItem('cart', JSON.stringify(cart))  
+    dispatch({
+      type: CART.GET_CART,
+      payload: cart
+    })
+  }
+
   const values = {
     getCart,
     cart: state.cart,
     addBookToCart,
     checkProductInCart,
-    deleteProductInCart
+    deleteProductInCart,
+    changeProductCount
   }
   return (
     <cartContext.Provider value={values}> {children}</cartContext.Provider>

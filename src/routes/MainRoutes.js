@@ -7,6 +7,7 @@ import CartPage from '../pages/CartPage'
 import EditProductPage from '../pages/EditProductPage'
 import HomePage from '../pages/HomePage'
 import NotFoundPage from '../pages/NotFoundPage'
+import OrderFormPage from '../pages/OrderFormPage'
 import ProductDetailsPage from '../pages/ProductDetailsPage'
 import ProductsPage from '../pages/ProductsPage'
 
@@ -56,6 +57,11 @@ const MainRoutes = () => {
       link: '/details/:id',
       element: <ProductDetailsPage />,
       id: 9
+    },
+    {
+      link: '/orderForm',
+      element: <OrderFormPage />,
+      id: 10
     }
   ]
   return (

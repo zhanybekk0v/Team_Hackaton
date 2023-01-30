@@ -7,6 +7,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { useCart } from '../contexts/CartContextProvider';
+import { Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -21,13 +23,13 @@ const rows = [
 ];
 
 export default function Cart() {
-  const { getCart, cart ,deleteProductInCart} = useCart()
-
- 
+  const { getCart, cart, deleteProductInCart, changeProductCount } = useCart()
+  const navigate = useNavigate()
 
   React.useEffect(() => {
     getCart()
   }, [])
+
 
   return (
     <TableContainer component={Paper}>
@@ -50,7 +52,7 @@ export default function Cart() {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                <img src={row.item.picture} alt="" style={{ width: 100, height: 140}} />
+                <img src={row.item.picture} alt="" style={{ width: 100, height: 140 }} />
               </TableCell>
               <TableCell align="right">{row.item.name}</TableCell>
               <TableCell align="right">{row.item.type}</TableCell>
@@ -60,7 +62,9 @@ export default function Cart() {
                 <input
                   min={1}
                   max={20}
-                  
+                  onChange={(e) =>
+                    changeProductCount(e.target.value, row.item.id)
+                  }
                   type="number"
                   value={row.count}
                 />
@@ -69,10 +73,14 @@ export default function Cart() {
                 {row.subPrice}
               </TableCell>
               <TableCell align="right" color='primary'>
-                <button onClick={()=> deleteProductInCart(row.item.id)} style={{ padding: '5px 20px', borderRadius: 10, border: 'none', color: 'white', backgroundColor: 'red' }} >Delete</button>
+                <button onClick={() => deleteProductInCart(row.item.id)} style={{ padding: '5px 20px', borderRadius: 10, border: 'none', color: 'white', backgroundColor: 'red' }} >Delete</button>
               </TableCell>
+
             </TableRow>
           ))}
+        <div style={{margin: 10, marginRight: 20 }}>
+          <Button onClick={() => navigate('/orderForm')} sx={{ backgroundColor: '#d7d7d7', color: 'black' }} >BUY FOR {cart?.totalPrice} $</Button>
+        </div>
         </TableBody>
       </Table>
     </TableContainer>
