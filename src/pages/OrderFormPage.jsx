@@ -1,6 +1,6 @@
 import { Box, Grid } from '@mui/material'
 import React from 'react'
-import OrderForm from '../components/OrderForm'
+import OrderForm from '../components/Products/OrderForm'
 
 const OrderFormPage = () => {
   return (
