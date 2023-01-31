@@ -1,11 +1,13 @@
-import { Box, CardMedia, Grid, Typography } from '@mui/material'
+import { Box, CardMedia, Grid, IconButton, Typography } from '@mui/material'
 import React from 'react'
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import './ProductDetails.css'
 import { useNavigate } from 'react-router-dom';
+import { useCart } from '../../contexts/CartContextProvider';
 
 const ProductDeteils = ({ product }) => {
+  const {addProductToCart,checkProductInCart } = useCart()
   const navigate = useNavigate()
   return (
     <div>
@@ -32,7 +34,8 @@ const ProductDeteils = ({ product }) => {
           </div>
           <div className='books_buy'>
             <span className="books_price">{product.price}P</span>
-            <ShoppingCartCheckoutIcon size="large" className='books_cart' />
+          <IconButton onClick={() => addProductToCart(product)}>
+             <ShoppingCartCheckoutIcon size="large" className='books_cart' color={checkProductInCart(product.id) ? 'primary' : ''}/> </IconButton>
           </div>
         </div>
       </div>
