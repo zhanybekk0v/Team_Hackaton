@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 import fire from '../fire'
 
 export const authContext = createContext()
@@ -37,6 +37,7 @@ const AuthContextProvider = ({ children }) => {
             setPasswordError(err.message)
         }
       })
+    console.log(email);
   }
 
   const handleLogIn = () => {
@@ -53,26 +54,28 @@ const AuthContextProvider = ({ children }) => {
           break;
       }
     })
+    setUser(email)
   }
 
   const handleLogOut = () => {
     fire.auth().signOut()
+    setUser('')
   }
 
-  // const authListener = () => {
-  //   fire.auth().onAuthStateChanged((user) => {
-  //     if (user) {
-  //       clearInputs()
-  //       setUser(user)
-  //     } else {
-  //       setUser('')
-  //     }
-  //   })
-  // }
+  const authListener = () => {
+    fire.auth().onAuthStateChanged((user) => {
+      if (user) {
+        clearInputs()
+        setUser(user)
+      } else {
+        setUser('')
+      }
+    })
+  }
 
-  // useEffect(() => {
-  //   authListener();
-  // }, [])
+  useEffect(() => {
+    authListener();
+  }, [])
 
   const values = {
     email, password, user,
