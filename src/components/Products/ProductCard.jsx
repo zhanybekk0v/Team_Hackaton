@@ -5,11 +5,14 @@ import './ProductCard.css'
 import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import { useCart } from '../../contexts/CartContextProvider';
 import { IconButton } from '@mui/material';
+import { useAuth } from '../../contexts/AuthContextProvider';
+import { ADMIN } from '../../helper/consts';
 
 export default function ProductCard({ item }) {
   const { deleteProduct } = useProduct()
   const {addBookToCart,checkProductInCart} = useCart()
   const navigate = useNavigate()
+  const {user} = useAuth()
 
   return (
     <div className="book">
@@ -29,12 +32,20 @@ export default function ProductCard({ item }) {
         </div>
       </div>
         <div className="button">
-          <button onClick={() => deleteProduct(item.id)}  className="delete">
-           Delete
-          </button>
-          <button onClick={() => navigate(`/edit/${item.id}`) } className="edit">
-           Edit
-          </button>
+          {user.email === ADMIN ? (
+            <>
+              <button onClick={() => deleteProduct(item.id)}  className="delete">
+              Delete
+             </button>
+             <button onClick={() => navigate(`/edit/${item.id}`) } className="edit">
+              Edit
+             </button>
+             </>
+          ) : (
+            null
+          )}
+        
+
           <IconButton onClick={() => addBookToCart(item)}> <LocalGroceryStoreIcon  size="large" color={checkProductInCart(item.id) ? 'primary' : 'black'} /></IconButton>
         </div>
     </div>

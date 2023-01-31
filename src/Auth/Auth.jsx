@@ -58,6 +58,7 @@ export default function Auth() {
       password: data.get('password'),
     });
   };
+  // console.log(email);
 
   return (
     <ThemeProvider theme={theme}>
@@ -117,7 +118,7 @@ export default function Auth() {
 
             </Grid>
             {hasAccount ? <Button
-              onClick={() => {handleLogIn(); navigate('/')}}
+              onClick={() => { handleLogIn(); navigate('/') }}
               type="submit"
               fullWidth
               variant="contained"
@@ -126,7 +127,7 @@ export default function Auth() {
               Log In
             </Button> :
               <Button
-                onClick={() => {handleSignUp() ; navigate('/')}}
+                onClick={() => { handleSignUp(); navigate('/') }}
                 type="submit"
                 fullWidth
                 variant="contained"

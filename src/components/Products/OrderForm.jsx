@@ -1,7 +1,15 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useCart } from '../../contexts/CartContextProvider'
 import './OrderForm.css'
 
 const OrderForm = () => {
+  const {getCart} = useCart()
+  const navigate = useNavigate()
+  const cartCleaner = () => {
+    localStorage.removeItem('cart')
+    getCart()
+  }
   return (
     <div class="orderForm">
       <div class="contentOrder">
@@ -43,7 +51,7 @@ const OrderForm = () => {
             <div class="input-box message-box">
               <textarea placeholder="Сообщение"></textarea>
             </div>
-            <div class="button">
+            <div class="button" onClick={() => { cartCleaner() ; navigate('/cart')}}>
               <input type="button" value="Отправить" />
             </div>
           </form>
