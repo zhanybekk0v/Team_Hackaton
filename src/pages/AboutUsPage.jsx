@@ -1,8 +1,10 @@
 import React from 'react'
-
+import HomeContent from '../Content/HomeContent'
 const AboutUsPage = () => {
   return (
-    <div>AboutUsPage</div>
+    <>
+      <HomeContent />
+    </>
   )
 }
 

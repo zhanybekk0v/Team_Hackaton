@@ -35,7 +35,7 @@ const ProductList = () => {
 
   return (
     <>
-        <Grid sx={{padding: '5rem'}}>
+        <Grid sx={{padding: '3rem'}}>
         <Box sx={{
           display: 'flex',
           justifyContent: 'space-around',

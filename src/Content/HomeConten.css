@@ -1,0 +1,24 @@
+.home{
+  padding-top: 130px;
+}
+.home-title{
+  text-align: center;
+  font-size: 45px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.description {
+  margin-left: 50px;
+  font-size: 20px;
+}
+.desc {
+  margin-bottom: 15px;
+}
+.btn{
+  display: flex;
+  justify-content: flex-end;
+}
+.btn-home {
+  padding: 10px 50px;
+
+}
